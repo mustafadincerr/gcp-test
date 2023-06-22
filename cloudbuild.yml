@@ -1,8 +1,8 @@
 steps:
   - name: gcr.io/cloud-builders/docker
-    args: []
+    args: ["build", "-t", "europe-west3-docker.pkg.dev/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME", "-f", "/Dockerfile", ".", "--build-arg", "PORT=8080"]
 substitutions:
-  _SERVICE_NAME: TATİL.COM
+  _SERVICE_NAME: test
 images:
-  - "gcr.io/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME"
-timeout: 1000s    
+  - "europe-west3-docker.pkg.dev/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME"
+timeout: 1200s    
