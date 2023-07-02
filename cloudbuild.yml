@@ -5,4 +5,5 @@ substitutions:
   _SERVICE_NAME: test
 images:
   - "europe-west3-docker.pkg.dev/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME"
-timeout: 1200s    
+options:  
+  dynamicSubstitutions: true  
